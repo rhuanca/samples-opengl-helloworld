@@ -1,14 +1,16 @@
 cmake_minimum_required (VERSION 2.8)
-project (CMakeHelloWorld)
+project (sample-glfw)
 
 
 #include the subdirectory containing our libs
 # add_subdirectory (src)
-# include_directories(Hello)
-#indicate the entry point for the executable
-add_executable (CMakeHelloWorld sample sample.cpp)
 
-# Indicate which libraries to include during the link process.
-# target_link_libraries (CMakeHelloWorld Hello)
+#include_directories(../glfw/include)
+#link_directories(../glfw/src)
+
+add_executable (sample-glfw sample.cpp)
+
+target_link_libraries (sample-glfw glfw GL)
+
 
 # install (TARGETS CMakeHelloWorld DESTINATION bin)
